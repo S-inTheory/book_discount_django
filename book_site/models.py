@@ -18,8 +18,7 @@ class Books(models.Model):
     cover = models.CharField(max_length=600)
     pages = models.CharField(max_length=4)
     chitai_gorod_price = models.CharField(max_length=4, null=True, default='нет в наличии')
-    book_24_price = models.CharField(max_length=4, null=True, default='нет в наличии')
-    labirint_price = models.CharField(max_length=4, null=True, default='нет в наличии')
+
 
 
 
