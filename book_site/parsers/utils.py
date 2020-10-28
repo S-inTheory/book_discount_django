@@ -1,7 +1,7 @@
 import requests
 
 
-def get_html(url):
+def get_html(url=''):
     headers = {
         'User-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 '
                       'Safari/537.36 '
@@ -13,3 +13,7 @@ def get_html(url):
     except(requests.RequestException, ValueError):
         print('Network error')
         return False
+
+
+if __name__ == '__main__':
+    get_html()
