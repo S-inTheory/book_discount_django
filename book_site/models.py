@@ -2,8 +2,7 @@ from django.db import models
 
 
 class Authors(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    full_name = models.CharField(max_length=100)
 
 
 class Publisher(models.Model):
