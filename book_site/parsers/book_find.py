@@ -1,9 +1,7 @@
-import json
+
 from collections import OrderedDict
-from pprint import pprint
 
 import bs4
-from urllib import request
 
 from book_site.parsers.utils import get_html
 
