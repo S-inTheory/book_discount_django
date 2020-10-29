@@ -13,9 +13,7 @@ class Books(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Authors, on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
-    isbn = models.CharField(max_length=100, unique=True)
     cover = models.CharField(max_length=600)
-    pages = models.CharField(max_length=4)
     labirint_price = models.CharField(max_length=4, null=True, default='нет в наличии')
     labirint_link = models.CharField(max_length=200, null=True, default='#')
 
