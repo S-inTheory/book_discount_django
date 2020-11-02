@@ -1,12 +1,12 @@
 from django.db import models
 
 
-class Authors(models.Model):
+class LabirintAuthors(models.Model):
     full_name = models.CharField(max_length=100)
     full_name_chitai_gorod = models.CharField(max_length=100, null=True)
 
 
-class Publisher(models.Model):
+class LabirintPublisher(models.Model):
     pubhouse = models.CharField(max_length=100)
 
 
