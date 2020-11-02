@@ -10,7 +10,8 @@ class Publisher(models.Model):
     pubhouse = models.CharField(max_length=100)
 
 
-class Books(models.Model):
+class Labirint(models.Model):
+    labirint_id = models.CharField(max_length=100, unique=True)
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Authors, on_delete=models.CASCADE)
     pubhouse = models.ForeignKey(Publisher, on_delete=models.CASCADE)
