@@ -75,6 +75,3 @@ def book24_search(book):
         return result
     return result
 
-
-test = book24_search('hvjvjhhjghjgjh')
-pprint(test)
