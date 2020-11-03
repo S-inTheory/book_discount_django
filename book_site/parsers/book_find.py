@@ -6,6 +6,7 @@ from book_site.parsers.utils import get_html
 
 
 def labirint_search(book):
+    """ Searches books in labirint store """
     html = get_html(f'https://www.labirint.ru/search/{book}/?order=relevance&way=back&stype=0&available=1&price_min'
                     f'=&price_max=')
     soup = bs4.BeautifulSoup(html, 'html.parser')
@@ -32,6 +33,7 @@ def labirint_search(book):
 
 
 def labirint_result(result):
+    """Return dictionary with separated search results from labirint_search function"""
     result_dict = {}
     try:
         result_length = len(result['title'])
@@ -50,6 +52,7 @@ def labirint_result(result):
 
 
 def book24_search(book):
+    """ Searches books in book24 store """
     html = get_html(f'https://book24.ru/search/?q={book}&available=1')
     soup = bs4.BeautifulSoup(html, 'html.parser')
     book24_find = soup.find('div', class_='catalog-products__list js-catalog-products')
@@ -76,6 +79,7 @@ def book24_search(book):
 
 
 def book24_result(result):
+    """Return dictionary with separated search results from book24_search function"""
     result_dict = {}
     try:
         result_length = len(result['title'])
@@ -92,4 +96,3 @@ def book24_result(result):
         result_dict = {}
 
     return result_dict
-
