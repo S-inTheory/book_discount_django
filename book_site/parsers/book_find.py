@@ -27,7 +27,6 @@ def labirint_search(book):
                               labirint_find.find_all('a', class_='cover')]}
     except AttributeError:
         result = []
-        return result
 
     return result
 
@@ -72,6 +71,5 @@ def book24_search(book):
         }
     except AttributeError:
         result = []
-        return result
-    return result
 
+    return result
