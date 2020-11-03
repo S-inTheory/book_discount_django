@@ -73,3 +73,23 @@ def book24_search(book):
         result = []
 
     return result
+
+
+def book24_result(result):
+    result_dict = {}
+    try:
+        result_length = len(result['title'])
+        for i in range(result_length):
+            result_dict[i] = {
+                'book24_id': result['book24_id'][i],
+                'title': result['title'][i],
+                'author': result['author'][i],
+                'cover': result['cover'][i],
+                'book24_price': result['book24_price'][i],
+                'book24_link': result['book24_link'][i],
+            }
+    except TypeError:
+        result_dict = {}
+
+    return result_dict
+
