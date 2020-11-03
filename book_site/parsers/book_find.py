@@ -49,3 +49,9 @@ def labirint_result(result):
 
     return result_dict
 
+
+def book24_search(book):
+    html = get_html(f'https://book24.ru/search/?q={book}&available=1')
+    soup = bs4.BeautifulSoup(html, 'html.parser')
+    book24_find = soup.find('div', class_='catalog-products__list js-catalog-products')
+    return book24_find
