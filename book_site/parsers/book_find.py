@@ -32,7 +32,7 @@ def labirint_search(book):
     return result
 
 
-def result_dictionary(result):
+def labirint_result(result):
     result_dict = {}
     try:
         result_length = len(result['title'])
