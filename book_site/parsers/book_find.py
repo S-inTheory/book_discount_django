@@ -54,4 +54,27 @@ def book24_search(book):
     html = get_html(f'https://book24.ru/search/?q={book}&available=1')
     soup = bs4.BeautifulSoup(html, 'html.parser')
     book24_find = soup.find('div', class_='catalog-products__list js-catalog-products')
-    return book24_find
+    try:
+        result = {
+            'book24_id': [product_id['data-product-id'] for product_id
+                          in book24_find.find_all('div',
+                                                  class_='book _d _card _fixed js-static-element _catalog-d ddl_product')],
+            'title': [title.text.replace('\n', '').strip() for title
+                      in book24_find.find_all('div', class_='book__title')],
+            'author': [author.text for author
+                       in book24_find.find_all('div', class_='book__author')],
+            'cover': [img['data-src'] for img
+                      in book24_find.find_all('img', class_='book__image')],
+            'book24_price': [price.text.replace('руб.', '').rstrip() for price
+                             in book24_find.find_all('div', class_='book__price-inner')][::2],
+            'book24_link': [f"https://book24.ru{link['href']}" for link
+                            in book24_find.find_all('a', class_='book__title-link js-item-element ddl_product_link')]
+        }
+    except AttributeError:
+        result = []
+        return result
+    return result
+
+
+test = book24_search('hvjvjhhjghjgjh')
+pprint(test)
