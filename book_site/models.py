@@ -3,7 +3,6 @@ from django.db import models
 
 class LabirintAuthors(models.Model):
     full_name = models.CharField(max_length=100)
-    full_name_chitai_gorod = models.CharField(max_length=100, null=True)
 
 
 class LabirintPublisher(models.Model):
@@ -18,6 +17,8 @@ class Labirint(models.Model):
     cover = models.CharField(max_length=600)
     labirint_price = models.CharField(max_length=4, null=True, default='нет в наличии')
     labirint_link = models.CharField(max_length=200, null=True, default='#')
+
+
 
 
 
