@@ -23,4 +23,12 @@ class Book24Authors(models.Model):
     full_name = models.CharField(max_length=100, unique=True)
 
 
+class Book24(models.Model):
+    book24_id = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(Book24Authors, on_delete=models.CASCADE)
+    cover = models.CharField(max_length=100)
+    book24_price = models.CharField(max_length=5)
+    book24_link = models.CharField(max_length=200)
+
 
