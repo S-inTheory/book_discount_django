@@ -19,6 +19,8 @@ class Labirint(models.Model):
     labirint_link = models.CharField(max_length=200, null=True, default='#')
 
 
+class Book24Authors(models.Model):
+    full_name = models.CharField(max_length=100, unique=True)
 
 
 
