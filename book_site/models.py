@@ -32,4 +32,8 @@ class Book24(models.Model):
     book24_link = models.CharField(max_length=200)
 
 
+class ChitaiGorodAuthor(models.Model):
+    full_name = models.CharField(max_length=100, unique=True)
+
+
 
