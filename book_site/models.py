@@ -36,4 +36,11 @@ class ChitaiGorodAuthor(models.Model):
     full_name = models.CharField(max_length=100, unique=True)
 
 
+class ChitaiGorod(models.Model):
+    chitaigorod_id = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
+    author = models.ForeignKey(ChitaiGorodAuthor, on_delete=models.CASCADE)
+    cover = models.CharField(max_length=100)
+    chitaigorod_price = models.CharField(max_length=5)
+    chitaigorod_link = models.CharField(max_length=200)
 
