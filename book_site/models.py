@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class LabirintAuthors(models.Model):
+class LabirintAuthor(models.Model):
     full_name = models.CharField(max_length=100, unique=True)
 
 
@@ -19,7 +19,7 @@ class Labirint(models.Model):
     labirint_link = models.CharField(max_length=200, null=True, default='#')
 
 
-class Book24Authors(models.Model):
+class Book24Author(models.Model):
     full_name = models.CharField(max_length=100, unique=True)
 
 
@@ -30,5 +30,6 @@ class Book24(models.Model):
     cover = models.CharField(max_length=100)
     book24_price = models.CharField(max_length=5)
     book24_link = models.CharField(max_length=200)
+
 
 
