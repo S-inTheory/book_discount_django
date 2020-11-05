@@ -99,3 +99,10 @@ def book24_result(result):
         result_dict = {}
 
     return result_dict
+
+
+if __name__ == '__main__':
+    labirint_search('test')
+    labirint_result('test')
+    book24_search('test')
+    book24_result('test')
