@@ -1,5 +1,3 @@
-from pprint import pprint
-
 import bs4
 
 from book_site.parsers.utils import get_html
@@ -62,8 +60,9 @@ def book24_search(book):
     try:
         result = {
             'book24_id': [product_id['data-product-id'] for product_id
-                          in book24_find.find_all('div',
-                                                  class_='book _d _card _fixed js-static-element _catalog-d ddl_product')],
+                          in book24_find.find_all('div', class_='book _d _card _fixed js-static-element _catalog-d '
+                                                                'ddl_product')
+                          ],
             'title': [title.text.replace('\n', '').strip() for title
                       in book24_find.find_all('div', class_='book__title')],
             'author': [author.text for author
